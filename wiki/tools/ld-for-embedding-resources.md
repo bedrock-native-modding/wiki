@@ -11,15 +11,15 @@ Download the MSYS2 installer from their [official website](https://www.msys2.org
 
 ![MSYS2 Setup](/tools/ld-for-embedding-resources/msys2-setup.png)
 
-Once installed, go to your **Start menu > MSYS folder > MSYS2 MSYS**. Run this command to install MinGW via `pacman`:
+Once installed, go to your Start menu > MSYS folder > MSYS2 MSYS. Run this command to install MinGW via `pacman`:
 
 ```bash
 $ pacman -S mingw-w64-x86_64-binutils
 ```
 
-The binaries for MinGW will be installed in `C:\msys64\mingw64\bin`. **You will need to add this folder to your system PATH to use it in your project.**
+The binaries for MinGW will be installed in `C:\msys64\mingw64\bin`. You will need to add this folder to your system PATH to use it in your project.
 
-Again, open the **Start menu**, search for **environment variables**, and select the first result. In the Control Panel menu that appears, select **"System variables..."**. Your PATH environment variable will be in the group labeled **"System variables"**. Double click this variable, and add the MinGW path to it.
+Again, open the Start menu, search for environment variables, and select the first result. In the Control Panel menu that appears, select "System variables...". Your PATH environment variable will be in the group labeled "System variables". Double click this variable, and add the MinGW path to it.
 
 Ensure `ld` can be ran by running it in a terminal. The following output should appear:
 
@@ -96,7 +96,7 @@ Resources built by `ld` will create external definitions for their start and end
 |                                   ↓                                   |
 | `_binary_resources_image_png_start / _binary_resources_image_png_end` |
 
-Here, the definition begins with `_binary_`, followed by the path to your resource relative to your project root, with all non-alphanumeric characters replaced with underscores. At the end, `_start` and `_end` are added to mark the start and end positions respectfully. These definitions respect any capitalization of your resource file paths, making them case-sensitive.
+Here, the path begins with `_binary`, followed by the path to your resource relative to your project root, with all non-alphanumeric characters replaced with underscores. At the end, `_start` and `_end` are added to mark the start and end positions respectfully. These definitions respect any capitalization of your resource file paths, making them case-sensitive.
 
 We can use this info to write some abstractions to reference and use the data from your resources:
 
