@@ -25,7 +25,8 @@ Native mods typically run their code inside the game's process (often called *in
 
 Hooks are what you use to modify the game's inner workings. Most functions in the game can be hooked. When you hook a function, you redirect calls to that function to your own code, effectively replacing the function's code with your own.
 
-Hooking is usually provided by a hooking library. The recommended choices are MinHook and SafetyHook. MinHook is simpler and more beginner friendly, while SafetyHook has more features and a more advanced API.
+Hooking is usually provided by a hooking library. The recommended choices are [MinHook](https://github.com/TsudaKageyu/minhook) and [SafetyHook](https://github.com/cursey/safetyhook).
+MinHook is simpler and more beginner friendly, while SafetyHook has more features and a more advanced API.
 
 In this guide, we will be using MinHook.
 
