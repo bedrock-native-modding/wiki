@@ -4,7 +4,7 @@ This section will walk you through installing all the required tools to develop 
 
 ## IDE Setup
 
-We recommend you use [CLion](https://www.jetbrains.com/clion/), a free (for non-commercial) C++ IDE.
+We recommend you use [CLion](https://www.jetbrains.com/clion/), a free (for non-commercial use) C++ IDE.
 
 ### Creating a Visual Studio Toolchain
 

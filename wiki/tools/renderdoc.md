@@ -12,13 +12,13 @@ and everything should work fine.
 ## UWP
 
 Prior to 1.21.120, Minecraft was a UWP app, which RenderDoc isn't designed for. 
-You'll need some extra steps to get it working for UWP.
+You'll need some extra steps to get it working for the UWP build.
 
 ### CheckNetIsolation
 
 RenderDoc talks to the process it's attached to with a loopback network connection, which normally isn't allowed on UWP apps.
 
-To make it work, run this PowerShell command in the background as administrator:
+To make it work, run this PowerShell command in the background as an administrator:
 
 ```ps
 CheckNetIsolation.exe LoopbackExempt -is -n="Microsoft.MinecraftUWP_8wekyb3d8bbwe"
@@ -30,7 +30,7 @@ Under **Tools** > **Settings** > **General**, set both capture directories to lo
 
 ### DLL Permissions
 
-By default, UWP won't be able to load `renderdoc.dll`.
+By default, UWP won't be able to load `renderdoc.dll` (see [UWP > DLL injection](/topics/uwp#dll-injection)).
 The easiest way to fix this is by injecting it once with a UWP DLL injector, like [Fate Injector](https://github.com/fligger/FateInjector).
 You can find the DLL in the installation directory of RenderDoc, eg. `C:\Program Files\RenderDoc\renderdoc.dll`.
 
@@ -40,8 +40,8 @@ RenderDoc needs to load before the graphics API is initialized.
 RenderDoc can't start UWP apps on its own, but there is a workaround for Minecraft.
 
 Hidden in `options.txt`, there is a setting called load_renderdocdll. 
-Set it to 1 to reload the renderer after minecraft is done loading.
+Set it to 1 to reload the renderer after Minecraft is done loading.
 
 ### Actually Capturing
 
-The renderdoc dll can't actually detect key presses in UWP apps, so you need to do it from the RenderDoc window.
+`renderdoc.dll` can't actually detect key presses in UWP apps, so you need to do it from the RenderDoc window.
