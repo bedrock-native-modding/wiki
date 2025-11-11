@@ -32,11 +32,15 @@ In this guide, we will be using MinHook.
 
 ## What's a Signature?
 
-The location of every function in Minecraft changes every time the game updates. However, most of the machine code stays identical between updates. To find functions in a way that's more likely to survive an update, we use signatures.
+The location of every function in Minecraft changes when the game updates; however, the machine code comprising these
+functions remains largely unchanged. To find functions in a way that's more likely to survive updates, we use *signatures*.
 
-A signature has a syntax that looks like this: `48 8D 05 ? ? ? ? 49 89 04 24 49 8D 8C 24`
+Fundamentally, signatures are just patterns that match specific sequences of bytes that we want to locate. Their syntax
+looks like this: `48 8D 05 ? ? ? ? 49 89 04 24 49 8D 8C 24`
 
-Signatures are also sometimes called patterns, or an array of bytes.
+> [!NOTE]
+> Signatures are also sometimes called patterns, byte patterns, or an array of bytes.
+
 
 ## Where Do I Start?
 
