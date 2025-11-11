@@ -35,7 +35,8 @@ export default defineConfig({
         text: 'Topics',
         collapsed: true,
         items: [
-          { text: 'GDK', link: '/topics/gdk' }
+          { text: 'GDK', link: '/topics/gdk' },
+          { text: 'UWP', link: '/topics/uwp' }
         ]
       },
       {
