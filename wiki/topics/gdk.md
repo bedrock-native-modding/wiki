@@ -10,8 +10,8 @@ Because Minecraft is no longer a UWP app, that means a few things:
 For unknown reasons, GDK apps have their main executable files encrypted at-rest. You also can't copy the file.
 This makes it more difficult to extract the executable for static analysis, but fortunately the protection is pretty easy to get around.
 
-To extract the decrypted executable, use this PowerShell command (replace `User` with your username):
+To extract the decrypted executable, use this PowerShell command to drop the executable onto your desktop:
 
 ```ps
-Invoke-CommandInDesktopPackage -PackageFamilyName "MICROSOFT.MINECRAFTUWP_8wekyb3d8bbwe" -AppId "Game" -Command "cmd.exe" -Args "/C copy `"C:\XboxGames\Minecraft for Windows\Content\Minecraft.Windows.exe`" `"C:\Users\User\Desktop\Minecraft.Windows.exe`""
+Invoke-CommandInDesktopPackage -PackageFamilyName "Microsoft.MinecraftUWP_8wekyb3d8bbwe" -AppId "Game" -Command "cmd.exe" -Args "/C copy `"$((Get-AppxPackage "Microsoft.MinecraftUWP").InstallLocation)\Minecraft.Windows.exe`" `"$ENV:USERPROFILE\Desktop\Minecraft.Windows.exe`""
 ```
