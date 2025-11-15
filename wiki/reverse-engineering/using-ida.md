@@ -1,7 +1,7 @@
 # Using IDA
 
-[Hex-ray's IDA](https://hex-rays.com/ida-pro) is a powerful disassembler and reverse engineering environment, used for 
-static analysis in the Bedrock Native Modding community. This article will cover how to setup your IDA environment for 
+[Hex-ray's IDA](https://hex-rays.com/ida-pro) is a powerful disassembler and reverse engineering environment, used by many in the Bedrock Native 
+Modding community for static analysis. This article will cover how to set up your IDA environment for 
 MCBE and the basics of IDA.
 
 > [!NOTE]
@@ -14,15 +14,15 @@ To easily create [`Signatures`](/beginners-guide/introduction#what-s-a-signature
 this for you, such as [A200K's SigMaker plugin](https://github.com/A200K/IDA-Pro-SigMaker) 
 (Usage provided in the repository's README).
 
-Plugins can be installed by simply dragging and dropping a plugin into `/your-ida-install-dir/plugins/`.
+Plugins can be installed by dragging and dropping a plugin into `/your-ida-install-dir/plugins/`.
 
 > [!WARNING]
-> IDA plugins can and may contain malware, thus be weary when using IDA plugins to not compromise yourself.
+> IDA plugins can contain malware, be careful when installing IDA plugins to not risk a virus.
 
 ## Running IDA
 When you load IDA an `IDA Quickstart` window will be shown.
 
-In this dialog you can choose to either:
+In this dialog, you can choose to either:
 - Select New - This will ask you to select a file to load into IDA.
 - Select Go - This will bring you to the main IDA view in a dormant state.
 - Select Previous - This will load the previously opened file in IDA.
