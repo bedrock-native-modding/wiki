@@ -19,45 +19,43 @@ Plugins can be installed by simply dragging and dropping a plugin into `/your-id
 > [!WARNING]
 > IDA plugins can and may contain malware, thus be weary when using IDA plugins to not compromise yourself.
 
-## Using IDA for the first time
+## Running IDA
 When you load IDA an `IDA Quickstart` window will be shown.
 
-![img.png](/reverse-engineering/using-ida/ida-quickstart.png)
+In this dialog you can choose to either:
+- Select New - This will ask you to select a file to load into IDA.
+- Select Go - This will bring you to the main IDA view in a dormant state.
+- Select Previous - This will load the previously opened file in IDA.
+- Select a recently opened file.
 
-Click go and you will be taken to the main IDA view, this is where you will be reversing Minecraft Bedrock.
+Here you can just press `Go`.
 
 ## Loading Minecraft into IDA
 
 `FloppyDolphin57` kindly provides pre analyzed Minecraft binaries for most Minecraft bedrock versions in the form of 
-packed IDA databases (i64 or idb files) these can be downloaded 
+packed IDA databases (i64 or idb files), these can be downloaded 
 [here](https://www.mediafire.com/folder/ammda8wfvbw9x/The_Flopper_Databases).
 
 For most versions, Client and Windows/Linux server databases are offered. The server databases (beyond 1.21.2)
-will most likely not be useful to you, so you can ignore these for now and download the Client database only.
-
-![img.png](/reverse-engineering/using-ida/floppers-databases.png)
-
-> [!NOTE]
-> Alternatively, you can manually analyze Minecraft by dragging and dropping the `Minecraft.Windows.exe` file from your
-> minecraft install directory into IDA. However, it isn't recommended you do this unless requires.
+will most likely not be useful to you, so you can ignore these for now and download the client database only.
 
 Once you have downloaded and extracted the client version of your choice, you can 
-simply drag and drop the i64 file into your IDA window to load it.
+simply drag and drop the i64 file into your IDA window to load it. IDA may ask you if you want to upgrade the format of 
+the database to what your IDA version supports. This may take a while for some users, but you will only have to do this 
+once.
 
-IDA may ask you if you want to upgrade the format of the database to what your IDA version supports.
-This may take a while for some users, but you will only have to do this once.
-![img.png](/reverse-engineering/using-ida/upgrade.png)
+Alternatively, you can manually analyze Minecraft by dragging and dropping the `Minecraft.Windows.exe` file from your
+Minecraft install into IDA.
 
-IDA may seem to freeze when loading a database or during general use. Don't worry as IDA is most likely silently
-working in the background.
+> [!NOTE]
+> IDA may seem to freeze when loading a database or during general use. Don't worry as IDA is most likely silently
+> working in the background.
 
 Great you have loaded Minecraft in IDA! You can now get to know the IDA environment.
 
-![img.png](/reverse-engineering/using-ida/loaded.png)
-
 > [!TIP]
-> The database file you loaded will now be available within the quickstart menu's list of recently loaded files, you can
-> now double click it's entry to load the database easier.
+> The database file will now be available within the quickstart menu, along with other recently opened files, you can 
+> now double-click its entry to load the database.
 
 
 
