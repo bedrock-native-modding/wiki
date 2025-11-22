@@ -9,3 +9,6 @@ On the Windows build of the game, Mojang includes 3 different rendering backends
 | DirectX 11       | ✔️      | ✔️     | ✖️               | ✖️           |
 | DirectX 12       | ✔️      | ✔️     | ✔️               | ✖️           |
 | DirectX 12 (RTX) | ✔️      | ✔️     | ✔️               | ✔️           |
+
+## Other Rendering Abstractions
+On top of the base RenderDragon rendering system, Minecraft: Bedrock Edition also implements other rendering abstractions. These can include specialized entity renderers, UI rendering contexts, and tesselators. Depending on your use case, these can be more beneficial than submitting raw DirectX calls to the game. We will attempt to document as many of these as possible in the wiki.
