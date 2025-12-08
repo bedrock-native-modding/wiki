@@ -42,8 +42,7 @@ export default defineConfig({
         text: 'Rendering',
         collapsed: true,
         items: [
-          { text: 'Overview', link: '/rendering/overview' },
-          { text: 'Getting Started with DirectX', link: '/rendering/getting-started-with-directx' }
+          { text: 'Overview', link: '/rendering/overview' }
         ]
       },
       {
