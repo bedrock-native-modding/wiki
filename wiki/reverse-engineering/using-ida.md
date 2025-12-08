@@ -11,8 +11,17 @@ MCBE.
 > [!NOTE]
 > This wiki assumes you are on [IDA Pro 9.2](https://docs.hex-rays.com/release-notes/9_2), the latest as of writing. 
 > It is not guaranteed that certain features or plugins used in this wiki support other versions of IDA.
-> [IDA Free](https://hex-rays.com/ida-free) is a viable alternative that supports disassembly and decompilation of
-> x86/x64 binaries.
+
+## Plugins
+IDA implements support for [plugins](https://docs.hex-rays.com/user-guide/plugins) that extend IDA's capability.
+To efficiently create [signatures](/beginners-guide/introduction#what-s-a-signature), we suggest you install a plugin to do
+this for you, such as [A200K's SigMaker plugin](https://github.com/A200K/IDA-Pro-SigMaker) 
+(Usage provided in the repository's README).
+
+Plugins can be installed by dragging and dropping a plugin into `/your-ida-install-dir/plugins/`.
+
+> [!WARNING]
+> IDA plugins can contain malware. Only install plugins from sources you trust.
 
 ## Running IDA
 When you run IDA, an **IDA Quickstart** window will open.
@@ -31,41 +40,45 @@ Here, you can just press **Go**.
 packed IDA databases (i64 or idb files). These databases can be downloaded 
 [here](https://www.mediafire.com/folder/ammda8wfvbw9x/The_Flopper_Databases).
 
-Most versions include a Windows Client, Windows Server, and Linux Server database. Server versions prior to 1.21.2
-shipped with debug symbols, and are useful for cross-referencing code against even the latest client versions.
+For most versions, Client and Windows/Linux server databases are offered. The server databases (beyond 1.21.2)
+will most likely not be useful to you, due to Mojang removing debug symbols for those versions, so you can ignore these for now and **download the client database only**.
 
-Once you have downloaded and extracted the client version of your choice, you can simply **drag and drop the i64 file
-into your IDA window** to load it.
-
-If you are using a newer version of IDA than the database was created with, IDA will prompt you to upgrade to the latest
-supported format. This is a mandatory step and may take a while, but it only has to be done once. Once the upgrade is
-complete, it's recommended to immediately save the database to avoid having to do so again, should the database be
-improperly saved.
+Once you have downloaded and extracted the client version of your choice, you can 
+simply **drag and drop the i64 file into your IDA window** to load it. IDA may ask if you want to upgrade the format of 
+the database to what your IDA version supports. This may take a while for some users, but you will only have to do this 
+once.
 
 Alternatively, you can manually analyze Minecraft by dragging and dropping the `Minecraft.Windows.exe` file from your
-Minecraft install into IDA. If you are analyzing a GDK version, the executable must be
-[extracted](/topics/gdk#extracting-the-executable-file) first. This process **will** take multiple hours.
+Minecraft install into IDA.
 
 > [!NOTE]
-> IDA may seem to freeze when loading a database or during general use. Don't worry, as IDA is likely working in the background.
+> IDA may seem to freeze when loading a database or during general use. Don't worry, as IDA is most likely silently
+> working in the background.
 
 At this point, Minecraft should be loaded into IDA. You can now start reversing.
 
 > [!TIP]
-> The database file will be available within the quickstart menu after opening it, along with other recently opened files.
-> You can now double-click its entry to load the database.
+> The database file will be available within the quickstart menu after opening it, along with other recently opened files. You can 
+> now double-click its entry to load the database.
 
 
-## Plugins
-IDA supports [plugins](https://docs.hex-rays.com/user-guide/plugins) to extend its capability. In the context of reverse engineering, this can be used to
-automate many tasks which are otherwise tedious and/or monotonous.
 
-A plugin can either come as an IDAPython script or a native binary, and may be installed by copying their respective
-file (`.py` or `.dll`) into the `plugins` subdirectory in IDA's installation directory.
 
-> [!WARNING]
-> IDA plugins can contain malware. Only install plugins from sources you trust.
 
-For efficiently creating [signatures](/beginners-guide/introduction#what-s-a-signature), it's recommended to use a
-plugin such as [A200K's SigMaker plugin](https://github.com/A200K/IDA-Pro-SigMaker) (Usage provided in the repository's
-README).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
