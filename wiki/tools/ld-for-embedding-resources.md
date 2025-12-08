@@ -69,7 +69,7 @@ When you have a lot of files to embed, this process of adding files manually can
 
 ```cmake
 # Recursively search for files in the 'resources' directory
-# and add them as resources:
+# and add them as resources
 file(GLOB_RECURSE RESOURCES RELATIVE ${CMAKE_CURRENT_LIST_DIR} CONFIGURE_DEPENDS "resources/*")
 add_resources(EMBEDDED_RESOURCES ${RESOURCES})
 ```
@@ -77,11 +77,11 @@ add_resources(EMBEDDED_RESOURCES ${RESOURCES})
 The `add_resources` function will build your resources as object files, and place them inside of the output variable you provide in the first argument. These object files must be added as sources to your project:
 
 ```cmake
-# Use 'target_sources' to add these object files to your project:
+# Use 'target_sources' to add these object files to your project
 target_sources(project_name_here PRIVATE ${EMBEDDED_RESOURCES})
 
 # Alternatively, they can be placed within 'add_library'
-# alongside your project source files:
+# alongside your project source files
 add_library(project_name_here SHARED ... ${EMBEDDED_RESOURCES})
 ```
 
@@ -102,8 +102,6 @@ We can use this info to write some abstractions to reference and use the data fr
 
 ```cpp
 #include <cstddef>
-#include <string>
-#include <span>
 
 #define LOAD_RESOURCE(x) extern "C" char _binary_resources_##x##_start, _binary_resources_##x##_end;
 #define GET_RESOURCE(x) Resource{&_binary_resources_##x##_start, &_binary_resources_##x##_end}
@@ -134,16 +132,16 @@ The `LOAD_RESOURCE` and `GET_RESOURCE` macros assume your resources are in a fol
 Example usage in your project is as follows:
 
 ```cpp
-// Define the external definitions for your resources.
+// Define the external definitions for your resources
 LOAD_RESOURCE(image_png)
 LOAD_RESOURCE(Roboto_ttf)
 
 void loadResources() {
-    // We can now create instances of Resource from these definitions.
+    // We can now create instances of Resource from these definitions
     const Resource image = GET_RESOURCE(image_png)
     const Resource roboto = GET_RESOURCE(Roboto_png)
 
-    // Pseudocode to load each resource:
+    // Pseudocode to load each resource
     Images::load(image.data(), image.size());
     Fonts::load(roboto.data(), roboto.size());
 }
