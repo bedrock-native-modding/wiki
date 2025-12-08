@@ -152,7 +152,7 @@ static HRESULT hk_Present(IDXGISwapChain* _this, UINT SyncInterval, UINT Flags) 
         // No device could be retrieved.
     }
 
-    return original(_this, SyncInterval, Flags);
+    return oPresent(_this, SyncInterval, Flags);
 }
 ```
 
