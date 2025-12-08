@@ -49,8 +49,7 @@ export default defineConfig({
         text: 'Reverse Engineering',
         collapsed: true,
         items: [
-          {text: 'Introduction', link:'/reverse-engineering/introduction'},
-          {text: 'Using IDA', link: '/reverse-engineering/using-ida'}
+          {text: 'Introduction', link:'/reverse-engineering/introduction'}
         ]
 
       }
