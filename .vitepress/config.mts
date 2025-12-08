@@ -44,14 +44,6 @@ export default defineConfig({
         items: [
           { text: 'Overview', link: '/rendering/overview' }
         ]
-      },
-      {
-        text: 'Reverse Engineering',
-        collapsed: true,
-        items: [
-          {text: 'Introduction', link:'/reverse-engineering/introduction'}
-        ]
-
       }
     ],
     socialLinks: [
