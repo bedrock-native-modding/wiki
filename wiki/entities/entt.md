@@ -165,7 +165,7 @@ however, only Windows binaries compiled with MSVC will include the class/struct 
 
 > [!TIP]
 > The majority of entity components are `struct` types. A few notable `class` exceptions are `ActorOwnerComponent` and
-> `FlagComponent`.
+> `HitboxComponent`.
 
 We'll be taking a look at `ActorEquipmentComponent` for this guide. Looking back at the screenshot with all the type
 names, we can begin a definition:
@@ -348,6 +348,10 @@ struct OnGroundFlag {
 };
 ```
 
+> [!NOTE]
+> As of 1.21.20, `FlagComponent<T>` has been flattened into dedicated classes for each flag. The example above is meant
+> to show how to apply the static type name method in more complex situations.
+
 Then create a `entt::type_hash` specialization for types derived from `IEntityComponent`:
 
 ```C++
@@ -386,7 +390,7 @@ struct EntityContext {
 };
 ```
 
-```C++ [1.20-1.20.41]
+```C++ [1.20-1.20.4x]
 struct EntityRegistryBase {
     entt::basic_registry<EntityId>& registry;
     uint32_t id;
@@ -487,7 +491,23 @@ public:
 
 Now if we obtain an instance of an `Actor`, such as the client's local player, accessing components is simple:
 
-```C++
+::: code-group
+
+```C++ [1.21.20+]
+void onLevelTick() {
+    EntityContext& entity = clientInstance->getLocalPlayer().getEntity();
+    
+    if (player.hasComponent<OnGroundFlagComponent>()) {
+        logToChat("Player is on the ground");
+    }
+
+    if (auto* svc = player.tryGetComponent<StateVectorComponent>(); svc) {
+        logToChat("Player is at {}", svc->pos);
+    }
+}
+```
+
+```C++ [1.20-1.21.2]
 void onLevelTick() {
     EntityContext& entity = clientInstance->getLocalPlayer().getEntity();
     
@@ -499,5 +519,4 @@ void onLevelTick() {
         logToChat("Player is at {}", svc->pos);
     }
 }
-
 ```
