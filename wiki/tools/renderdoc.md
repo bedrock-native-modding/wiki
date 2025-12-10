@@ -33,7 +33,7 @@ Under **Tools** > **Settings** > **General**, set both capture directories to lo
 
 ### DLL Permissions
 
-By default, UWP won't be able to load `renderdoc.dll` (see [UWP > DLL injection](/topics/uwp#dll-injection)).
+By default, UWP won't be able to load `renderdoc.dll` (see [UWP > DLL injection](/platforms/uwp#dll-injection)).
 The easiest way to fix this is by injecting it once with a UWP DLL injector, like [Fate Injector](https://github.com/fligger/FateInjector).
 You can find the DLL in the installation directory of RenderDoc, eg. `C:\Program Files\RenderDoc\renderdoc.dll`.
 

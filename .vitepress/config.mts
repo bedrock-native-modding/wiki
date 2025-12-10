@@ -25,18 +25,28 @@ export default defineConfig({
         text: 'Tools',
         collapsed: true,
         items: [
+          { text: 'Configuring your compiler', link: '/tools/configuring-your-compiler' },
           { text: 'Clang', link: '/tools/clang' },
           { text: 'Using ld to embed resources', link: '/tools/ld-for-embedding-resources' },
           { text: 'RenderDoc', link: '/tools/renderdoc' },
         ]
       },
       {
-        text: 'Topics',
+        text: 'Platforms',
         collapsed: true,
         items: [
-          { text: 'GDK', link: '/topics/gdk' },
-          { text: 'UWP', link: '/topics/uwp' }
+          { text: 'GDK', link: '/platforms/gdk' },
+          { text: 'UWP', link: '/platforms/uwp' }
         ]
+      },
+      {
+          text: 'Reverse Engineering',
+          collapsed: true,
+          items: [
+              {text: 'Introduction', link:'/reverse-engineering/introduction'},
+              {text: 'Using IDA', link: '/reverse-engineering/using-ida'},
+              {text: 'Microsoft STL', link: '/reverse-engineering/microsoft-stl'}
+          ]
       },
       {
         text: 'Rendering',
@@ -47,13 +57,11 @@ export default defineConfig({
         ]
       },
       {
-        text: 'Reverse Engineering',
+        text: 'Entities',
         collapsed: true,
         items: [
-          {text: 'Introduction', link:'/reverse-engineering/introduction'},
-          {text: 'Using IDA', link: '/reverse-engineering/using-ida'}
+            {text: 'EnTT', link:'/entities/entt'},
         ]
-
       }
     ],
     socialLinks: [
