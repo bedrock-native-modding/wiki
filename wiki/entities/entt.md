@@ -49,7 +49,13 @@ FetchContent_MakeAvailable(EnTT)
 target_link_libraries(MyTarget PRIVATE EnTT::EnTT)
 ```
 
-Alternatively, if a package repository is configured in your environment, `find_package` can be used as a less verbose
+Or, if you have a CMake project using CPM ([setup](/beginners-guide/your-first-hook#cpm)):
+
+```CMake
+CPMAddPackage("gh:BasedInc/libhat@v3.13.1")
+```
+
+Or, if a package repository is configured in your environment, `find_package` can be used as a less verbose
 option. However, only official releases that are published to the repository will be available, not necessarily specific
 commits.
 ```CMake
