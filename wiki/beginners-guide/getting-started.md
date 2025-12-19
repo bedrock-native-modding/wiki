@@ -33,7 +33,14 @@ Above `add_library`, add the following:
 set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreadedDLL")
 ```
 
-This configures your DLL to use the release runtime library, which ensures ABI compatibility (TBA!!!!!!!!!!!!!!! ADD A LINK TO THE ABI COMPATIBILITY ARTICLE RN!!!!!!!!!!!!!!!!) with the game when building in debug mode. Without this, you wouldn't be able to use standard library types like `std::string` with the game!
+This configures your DLL to use the release runtime library, which ensures ABI compatibility (TBA!!!!!!!!!!!!!!! ADD A LINK TO THE ABI COMPATIBILITY ARTICLE RN!!!!!!!!!!!!!!!!)
+with the game when building in debug mode. Without this, you wouldn't be able to use standard library types like `std::string` with the game!
+
+> [!NOTE]
+> The above runtime library example is a general approach that will keep the mod binary smaller and work for most cases,
+> but could result in runtime errors if the user's machine does not have the appropriate Visual C++ redistributable
+> installed. If needed, a more advanced setup that can be tailored to your mod's needs is addressed in
+> [Setting the Runtime Library](/tools/configuring-your-compiler#setting-the-runtime-library).
 
 ## Writing DllMain
 
