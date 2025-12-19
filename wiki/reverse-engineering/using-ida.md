@@ -44,7 +44,7 @@ improperly saved.
 
 Alternatively, you can manually analyze Minecraft by dragging and dropping the `Minecraft.Windows.exe` file from your
 Minecraft install into IDA. If you are analyzing a GDK version, the executable must be
-[extracted](/topics/gdk#extracting-the-executable-file) first. This process **will** take multiple hours.
+[extracted](/platforms/gdk#extracting-the-executable-file) first. This process **will** take multiple hours.
 
 > [!NOTE]
 > IDA may seem to freeze when loading a database or during general use. Don't worry, as IDA is likely working in the background.

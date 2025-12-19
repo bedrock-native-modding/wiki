@@ -1,5 +1,5 @@
 # UWP
-Before 1.21.120, Minecraft was built with [UWP](https://learn.microsoft.com/en-us/windows/uwp/), which was Microsoft's attempt at unifying projects built for desktop Windows, Xbox, and Windows Phone under one platform. UWP is considered to be a deprecated platform (since October 2021), and was not ideal for developing games. These are possible reasons as to why Mojang decided to move the game to [GDK](/topics/gdk).
+Before 1.21.120, Minecraft was built with [UWP](https://learn.microsoft.com/en-us/windows/uwp/), which was Microsoft's attempt at unifying projects built for desktop Windows, Xbox, and Windows Phone under one platform. UWP is considered to be a deprecated platform (since October 2021), and was not ideal for developing games. These are possible reasons as to why Mojang decided to move the game to [GDK](/platforms/gdk).
 
 ## Key differences
 Compared to regular Win32 apps, UWP apps:
