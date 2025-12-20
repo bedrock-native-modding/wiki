@@ -52,7 +52,7 @@ target_link_libraries(MyTarget PRIVATE EnTT::EnTT)
 Or, if you have a CMake project using CPM ([setup](/beginners-guide/your-first-hook#cpm)):
 
 ```CMake
-CPMAddPackage("gh:skypjack/entt@v3.13.1")
+CPMAddPackage("gh:skypjack/entt@3.13.1")
 ```
 
 Or, if a package repository is configured in your environment, `find_package` can be used as a less verbose
@@ -163,7 +163,7 @@ When defining components, there are a few key things that must be matched to the
 
 ### Matching the Declaration
 
-Component names and their and class/struct designation are simple enough to find. EnTT leaves strings in all Minecraft:
+Component names and their class/struct designation are simple enough to find. EnTT leaves strings in all Minecraft:
 Bedrock Edition binaries as part of type name stored in the static `entt::type_info<T>` instance for all components;
 however, only Windows binaries compiled with MSVC will include the class/struct designation:
 
@@ -515,7 +515,7 @@ void onLevelTick() {
 
 ```C++ [1.20-1.21.2]
 void onLevelTick() {
-    EntityContext& entity = clientInstance->getLocalPlayer().getEntity();
+    EntityContext& player = clientInstance->getLocalPlayer().getEntity();
     
     if (player.hasComponent<FlagComponent<OnGroundFlag>>()) {
         logToChat("Player is on the ground");
