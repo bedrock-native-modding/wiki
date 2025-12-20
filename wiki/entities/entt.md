@@ -42,7 +42,7 @@ include(FetchContent)
 FetchContent_Declare(
   EnTT
   GIT_REPOSITORY https://github.com/skypjack/entt.git
-  GIT_TAG        2909e7ab1f1e73a36f778319070695611e3fa47b # v3.13.1
+  GIT_TAG        fe8d7d78c4823e8a66a050bf86f5c6318cf76ce7 # Minecraft 1.21.90+
 )
 
 FetchContent_MakeAvailable(EnTT)
@@ -52,7 +52,7 @@ target_link_libraries(MyTarget PRIVATE EnTT::EnTT)
 Or, if you have a CMake project using CPM ([setup](/beginners-guide/your-first-hook#cpm)):
 
 ```CMake
-CPMAddPackage("gh:skypjack/entt@v3.13.1")
+CPMAddPackage("gh:skypjack/entt#fe8d7d78c4823e8a66a050bf86f5c6318cf76ce7")
 ```
 
 Or, if a package repository is configured in your environment, `find_package` can be used as a less verbose
